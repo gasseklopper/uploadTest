@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image QR Code Generator</title>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+    <h1>Image QR Code Generator</h1>
+    <input type="file" id="fileInput" accept="image/*">
+    <button onclick="handleUpload()">Upload Image</button>
+    <div id="qrCodeContainer" style="display: none;">
+        <h2>QR Code:</h2>
+        <div id="qrCode"></div>
+    </div>
+
+   
+</body>
+</html>
