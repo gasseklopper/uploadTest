@@ -24,6 +24,7 @@ const upload = multer({ storage: storage });
 // Handle file upload route
 app.post('/upload', upload.single('image'), async (req, res) => {
     const imagePath = req.file.path;
+    console.log(imagePath)
     const qrCodeData = await generateQRCode(imagePath);
     res.send(qrCodeData);
 });

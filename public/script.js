@@ -2,11 +2,14 @@ console.log('test')
 async function handleUpload() {
     const fileInput = document.getElementById('fileInput');
     const file = fileInput.files[0];
+    console.log('file', file)
+    console.log('fileName', file.name)
+    // console.log('filePath', file.name)
 
     if (file) {
-        const imageData = await readFileAsDataURL(file);
-        console.log(imageData)
-        const qrCodeData = await generateQRCode('https://accenture.com/test/test/test');
+        // const imageData = await readFileAsDataURL(file);
+        // console.log(imageData)
+        const qrCodeData = await generateQRCode(`https://accenture.com/test/test/test/${file.name}`);
         displayQRCode(qrCodeData);
     }
 }
