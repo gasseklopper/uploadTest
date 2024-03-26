@@ -11,11 +11,16 @@
     <h1>Image QR Code Generator</h1>
     <input type="file" id="fileInput" accept="image/*">
     <button onclick="handleUpload()">Upload Image</button>
+
+    <div id="uploadedImageContainer" style="display: none;">
+        <h2>Uploaded Image:</h2>
+        <img id="uploadedImage" src="" alt="Uploaded Image">
+    </div>
+
     <div id="qrCodeContainer" style="display: none;">
         <h2>QR Code:</h2>
         <div id="qrCode"></div>
     </div>
-
    
 </body>
 </html>

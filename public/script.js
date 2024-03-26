@@ -7,8 +7,9 @@ async function handleUpload() {
     // console.log('filePath', file.name)
 
     if (file) {
-        // const imageData = await readFileAsDataURL(file);
+        const imageData = await readFileAsDataURL(file);
         // console.log(imageData)
+        displayUploadedImg(imageData); // Display uploaded image
         const qrCodeData = await generateQRCode(`https://accenture.com/test/test/test/${file.name}`);
         displayQRCode(qrCodeData);
     }
@@ -28,6 +29,14 @@ async function generateQRCode(data) {
     qr.addData(data);
     qr.make();
     return qr.createDataURL(10, 0);
+}
+
+function displayUploadedImg(imageData) {
+    const uploadedImageElement = document.getElementById('uploadedImage');
+    uploadedImageElement.src = imageData;
+
+    const uploadedImageContainer = document.getElementById('uploadedImageContainer');
+    uploadedImageContainer.style.display = 'block';
 }
 
 function displayQRCode(qrCodeData) {
